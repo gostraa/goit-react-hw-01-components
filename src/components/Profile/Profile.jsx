@@ -1,24 +1,27 @@
 import PropTypes from 'prop-types';
-import React from 'react'
+import {Container,ProfileImg,CardDescr,Stats}   from './Profile.styled'
+
+
+
 
 export const Profile =  ({
   username,
   tag,
   location,
   avatar,
-  stats: { followers, views, likes },
+  stats: { followers, views, likes},
 }) => {
    
   return (
-    <div className="profile">
-      <div className="description">
-        <img src={avatar} alt={username} className="avatar" />
+    <Container className="profile">
+      <CardDescr className="description">
+        <ProfileImg src={avatar} alt={username} className="avatar" />
         <p className="name">{username}</p>
         <p className="tag">@{tag}</p>
         <p className="location">{location}</p>
-      </div>
+      </CardDescr>
 
-      <ul className="stats">
+      <Stats>
         <li>
           <span className="label">Followers</span>
           <span className="quantity">{followers}</span>
@@ -31,8 +34,8 @@ export const Profile =  ({
           <span className="label">Likes</span>
           <span className="quantity">{likes}</span>
         </li>
-      </ul>
-    </div>
+      </Stats>
+    </Container>
   );
 };
 
