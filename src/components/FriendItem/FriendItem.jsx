@@ -7,6 +7,7 @@ export const FriendItem = ({ avatar, name, isOnline, id }) => {
         <p className="name">{name}</p>
       <span className={isOnline ? "online" : "offline"}>{isOnline ? "online" : "offline"}</span>
           
+      
 </Friend>
   )
 }
